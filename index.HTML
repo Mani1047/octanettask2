@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        body {
+            background-color: #e9ebee;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2e3a59;
+        }
+
+        .list-container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #c2e1f5;
+            border-radius: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            background-color: #d8e8f8;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #2e3a59;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #2e3a59;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>To Do List</h1>
+    <div class="list-container">
+        <input type="text" id="new-item" placeholder="Enter a new task">
+        <button id="add-button">Add</button>
+        <ul id="item-list">
+        </ul>
+    </div>
+    <script>
+        document.getElementById('add-button').addEventListener('click', function() {
+            var listItem = document.getElementById('new-item').value;
+            var li = document.createElement('li');
+            li.textContent = listItem;
+            document.getElementById('item-list').appendChild(li);
+            document.getElementById('new-item').value = '';
+        });
+    </script>
+</body>
+</html>
